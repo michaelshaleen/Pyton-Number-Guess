@@ -17,6 +17,22 @@ def guess(x):
 
 
 
+def computer_guess(x):
+  low = 1
+  high = x
+  feedback = ''
+  while feedback != 'c':
+    if low != high:
+        guess = random.randint(low, high)
+    else:
+        guess = low
+    feedback = input(f"Is {guess} too high (H), or too low (L), or correct (C)?").lower()
+    if feedback == 'h':
+      high = guess - 1 
+    elif feedback == 'l':
+      high = guess + 1
+  print(f'The Computer guessed your number, {guess}, correctly!')
+
 
 # out of while loop
-guess(10)
+computer_guess(10)
